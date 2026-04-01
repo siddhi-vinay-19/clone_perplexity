@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus AI | Perplexity-Inspired Intelligence</title>
+    <meta name="description" content="A pixel-perfect clone of Perplexity AI using vanilla HTML, CSS, and JS.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-top">
+                <div class="logo-icon">
+                    <i data-lucide="zap" class="icon-primary"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="nav-item active" id="nav-search">
+                        <i data-lucide="search"></i>
+                        <span>Search</span>
+                        <span class="shortcut">^1</span>
+                    </li>
+                    <li class="nav-item" id="nav-computer">
+                        <i data-lucide="monitor"></i>
+                        <span>Computer</span>
+                    </li>
+                </ul>
+                <button class="new-thread-btn">
+                    <i data-lucide="plus"></i>
+                    <span>New thread</span>
+                </button>
+                <ul class="nav-links secondary">
+                    <li class="nav-item">
+                        <i data-lucide="history"></i>
+                        <span>History</span>
+                    </li>
+                    <li class="nav-item">
+                        <i data-lucide="compass"></i>
+                        <span>Discover</span>
+                    </li>
+                    <li class="nav-item">
+                        <i data-lucide="grid"></i>
+                        <span>Spaces</span>
+                    </li>
+                    <li class="nav-item">
+                        <i data-lucide="trending-up"></i>
+                        <span>Finance</span>
+                    </li>
+                    <li class="nav-item">
+                        <i data-lucide="heart"></i>
+                        <span>Health</span>
+                    </li>
+                    <li class="nav-item">
+                        <i data-lucide="more-horizontal"></i>
+                        <span>More</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-bottom">
+                <div class="history-empty">
+                    <h4>History</h4>
+                    <p>Recent and active threads will appear here.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="avatar-placeholder">
+                        <i data-lucide="user"></i>
+                    </div>
+                    <span>Sign In</span>
+                    <i data-lucide="chevron-right" class="chevron"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="search-hero">
+                <h1 class="logo-text">perplexity</h1>
+                
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <textarea id="search-input" placeholder="Type @ for connectors and sources" rows="1"></textarea>
+                        <div class="search-actions">
+                            <div class="left-actions">
+                                <input type="file" id="file-input" accept=".pdf" style="display: none;">
+                                <button class="action-btn" id="attach-btn"><i data-lucide="plus"></i></button>
+                                <button class="action-btn pill">
+                                    <i data-lucide="monitor" class="small-icon"></i>
+                                    <span>Computer</span>
+                                    <i data-lucide="plus" class="small-icon"></i>
+                                </button>
+                            </div>
+                            <div class="right-actions">
+                                <button class="action-btn dropdown">
+                                    <span>Model</span>
+                                    <i data-lucide="chevron-down"></i>
+                                </button>
+                                <button class="action-btn"><i data-lucide="mic"></i></button>
+                                <button class="send-btn" disabled>
+                                    <i data-lucide="arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Chat Results Container -->
+                <div id="chat-results" class="chat-results hidden"></div>
+
+                <!-- Suggestions / Try Computer -->
+                <section class="suggestions-section">
+                    <div class="section-header">
+                        <i data-lucide="monitor"></i>
+                        <span>Try Computer</span>
+                    </div>
+                    <div class="tag-filters">
+                        <button class="tagactive"><i data-lucide="briefcase"></i> Build a business</button>
+                        <button class="tag"><i data-lucide="code"></i> Create a prototype</button>
+                        <button class="tag"><i data-lucide="eye"></i> Monitor the situation</button>
+                        <button class="tag"><i data-lucide="sparkles"></i> Help me...</button>
+                    </div>
+                    
+                    <ul class="suggestion-list">
+                        <li>Build a financial model for my startup</li>
+                        <li>Draft a partnership proposal for a target company</li>
+                        <li>Research my top competitors and break down their strategy</li>
+                        <li>Create a pitch deck I can present this week</li>
+                        <li>Find early customers and draft cold outreach</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
